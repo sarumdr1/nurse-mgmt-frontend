@@ -15,8 +15,6 @@ const UnAuthenticatedRoute = () => {
     useEffect(() => {
 
         if (Object.keys(token).length !== 0) {
-
-            console.log('if outside')
             navigate(routes.nurses.path);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps

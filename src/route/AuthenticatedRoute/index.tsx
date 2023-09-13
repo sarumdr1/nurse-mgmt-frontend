@@ -13,7 +13,6 @@ const AuthenticatedRoute = () => {
     const token = getToken({ name: config.tokenName })?.token;
 
     if (Object.keys(token).length === 0) {
-        console.log('authenticated')
         return <Navigate to={routes.login.path} />;
     }
     return (
