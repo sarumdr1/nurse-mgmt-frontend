@@ -1,6 +1,5 @@
 export const getToken = (args: { name: string }) => {
     try {
-        console.log(args.name)
         return { token: JSON.parse(localStorage.getItem(args.name) || '{}') };
     } catch (err) {
         return null;
