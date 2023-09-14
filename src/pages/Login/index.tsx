@@ -44,7 +44,7 @@ const Login = () => {
                         ? error?.response?.data?.message
                         : error?.data?.message?.password
                             ? error?.data?.message?.password?.[0]
-                            : "Something went wrong. Please try again."
+                            : "Login Failed. Please try again."
                 );
             });
     };
