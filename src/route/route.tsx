@@ -6,6 +6,7 @@ import AuthenticatedRoute from "./AuthenticatedRoute";
 import UnAuthenticatedRoute from "./UnAuthenticatedRoute";
 import Signup from '../pages/Signup/index';
 import Nurses from "../pages/Nurses";
+import AddNurse from '../pages/Nurses/AddNurse/index';
 
 const Routes = () => {
     return (
@@ -29,6 +30,10 @@ const Routes = () => {
                     <Route
                         path={routes.nurses.path}
                         element={<Nurses />}
+                    />
+                    <Route
+                        path={routes.addNurses.path}
+                        element={<AddNurse />}
                     />
                 </Route>
             </Router>

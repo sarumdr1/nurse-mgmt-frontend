@@ -19,9 +19,9 @@ const AuthenticatedRoute = () => {
         <div className={styles.root}>
             <div className={styles.appBarSpacer} />
             <Row style={{ width: '100%', margin: '0' }}>
-                <Col lg={2} id="sidebar-wrapper">
-                </Col>
-                <Col lg={10} id="page-content-wrapper">
+                {/* <Col lg={2} id="sidebar-wrapper">
+                </Col> */}
+                <Col id="page-content-wrapper">
                     <main
                         className={styles.content}
                     >

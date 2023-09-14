@@ -1,9 +1,9 @@
 import axios from "../config/axios";
 
-export const get = (url: string, filters: any) => {
+export const get = (url: string) => {
   try {
     return axios
-      .get(url, { params: filters })
+      .get(url)
       .then((response: any) => {
         return response;
       })
