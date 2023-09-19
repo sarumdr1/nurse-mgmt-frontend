@@ -14,7 +14,7 @@ import { setUser } from "../../utils/user"
 import { setToken } from "../../utils/token"
 import { post } from "../../API/axios"
 import { useNavigate } from "react-router-dom"
-import { ILoginInput, ILoginResponse } from "../../interface/ILogin"
+import { ILoginResponse } from "../../interface/ILogin"
 
 const Login = () => {
 
@@ -50,7 +50,6 @@ const Login = () => {
             });
     };
 
-
     return (
         <>
             <Row>
@@ -62,15 +61,18 @@ const Login = () => {
                     <p className={styles.mainTitle}>Login to your account</p>
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <FormInput name='email' label="Email" type='email' placeholder='Enter your email address' register={register} />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text>
+                            <FormInput name='email' label="Email" type='email' placeholder='Enter your email address' register={{ ...register("email", { required: "Email required" }) }} />
+                            {errors.email &&
+                                <p className='error-message'>{errors?.email?.message as string}</p>
+                            }
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                            <FormInput name='password' label="Password" type='password' placeholder='Enter your password' register={register} />
+                            <FormInput name='password' label="Password" type='password' placeholder='Enter your password' register={{ ...register("password", { required: "Password required" }) }} />
+                            {errors.password &&
+                                <p className='error-message'>{errors?.password?.message as string}</p>
+                            }
                         </Form.Group>
 
                         <CustomButton variant="primary" type="submit" label='Login' classes={styles.submitBtn} />
