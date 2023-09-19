@@ -20,7 +20,7 @@ const FormInput = (props: IProps) => {
                 type={props.type}
                 placeholder={props.placeholder}
                 className={`${styles.formInput} ${props.classes}`}
-                {...props.register(props.name)} />
+                {...props.register} />
         </>
     )
 }

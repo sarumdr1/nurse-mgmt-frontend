@@ -22,9 +22,7 @@ const Signup = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm({
-        // resolver: yupResolver(schema),
-    });
+    } = useForm();
 
     const onSubmit = async (data: any) => {
         post("/signup", data)
@@ -55,12 +53,18 @@ const Signup = () => {
                     <p className={styles.mainTitle}>Create your account</p>
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <FormInput name='email' label="Email" type='email' placeholder='Enter your email address' register={register} />
+                            <FormInput name='email' label="Email" type='email' placeholder='Enter your email address' register={{ ...register("email", { required: "Email required" }) }} />
+                            {errors.email &&
+                                <p className='error-message'>{errors?.email?.message as string}</p>
+                            }
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                            <FormInput name='password' label="Password" type='password' placeholder='Enter your password' register={register} />
+                            <FormInput name='password' label="Password" type='password' placeholder='Enter your password' register={{ ...register("password", { required: "Password required" }) }} />
+                            {errors.password &&
+                                <p className='error-message'>{errors?.password?.message as string}</p>
+                            }
                         </Form.Group>
 
                         <CustomButton variant="primary" type="submit" label='Sign up' classes={styles.submitBtn} />
