@@ -7,6 +7,7 @@ import UnAuthenticatedRoute from "./UnAuthenticatedRoute";
 import Signup from '../pages/Signup/index';
 import Nurses from "../pages/Nurses";
 import AddNurse from '../pages/Nurses/AddNurse/index';
+import EditNurse from '../pages/Nurses/EditNurse/index';
 
 const Routes = () => {
     return (
@@ -34,6 +35,10 @@ const Routes = () => {
                     <Route
                         path={routes.addNurses.path}
                         element={<AddNurse />}
+                    />
+                    <Route
+                        path={routes.editNurses.path(':id')}
+                        element={<EditNurse />}
                     />
                 </Route>
             </Router>
