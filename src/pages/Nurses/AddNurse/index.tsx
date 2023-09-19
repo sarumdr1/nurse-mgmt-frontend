@@ -37,7 +37,7 @@ const AddNurse = () => {
             </Col>
             <Col lg={8} className={styles.formCol}>
                 <p className={styles.title}>Add New Nurses</p>
-                <NurseForm onSubmit={onSubmit} />
+                <NurseForm onSubmit={onSubmit} btnTitle='Add Nurse' />
             </Col>
 
         </Row>

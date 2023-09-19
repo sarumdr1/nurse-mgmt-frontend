@@ -8,14 +8,18 @@ import styles from './styles.module.scss'
 
 interface IProps {
     onSubmit: (data: any) => void
+    data?: any
+    btnTitle: string
 }
 const NurseForm = (props: IProps) => {
+    const data = props?.data
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm({
         // resolver: yupResolver(schema),
+        defaultValues: data
     });
 
     const onSubmit = (data: any) => {
@@ -69,7 +73,7 @@ const NurseForm = (props: IProps) => {
                 </select>
             </Form.Group>
 
-            <CustomButton variant="primary" type="submit" label='Add Nurse' classes={styles.submitBtn} />
+            <CustomButton variant="primary" type="submit" label={props.btnTitle} classes={styles.submitBtn} />
 
         </Form>
     )

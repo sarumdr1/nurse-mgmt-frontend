@@ -25,9 +25,19 @@ export const post = (url: string, data: any) => {
   }
 };
 
-export const patch = (url: string, data: any) => {
+export const put = (url: string, data: any) => {
   try {
-    return axios.patch(url, data).then((response: any) => {
+    return axios.put(url, data).then((response: any) => {
+      return response;
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deletes = (url: string) => {
+  try {
+    return axios.delete(url).then((response: any) => {
       return response;
     });
   } catch (error) {

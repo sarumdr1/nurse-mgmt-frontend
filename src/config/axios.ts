@@ -1,10 +1,9 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosInstance, AxiosResponse } from "axios";
 import constant from ".";
 import { getToken, removeToken } from "../utils/token";
 import configs from "../config";
 
 import { toast } from 'react-toastify';
-import { constants } from "buffer";
 
 interface AuthToken {
   token: string;
@@ -38,8 +37,6 @@ const responseInterceptor = instance.interceptors.response.use(
       window.location.href = "/";
     }
     if (error.response?.status === 401 || error.response?.status === 403) {
-      // removeToken({ name: "token" });
-      // window.location.href = "/";
       toast.error(error);
       return Promise.reject(error);
     } else {

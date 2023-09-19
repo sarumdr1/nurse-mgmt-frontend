@@ -1,5 +1,5 @@
 import React from "react"
-import { Form, Button, Col, Row } from "react-bootstrap"
+import { Form, Col, Row } from "react-bootstrap"
 import FormInput from "../../component/FormInput"
 
 import LoginImage from '../../images/login.svg'
@@ -14,6 +14,7 @@ import { setUser } from "../../utils/user"
 import { setToken } from "../../utils/token"
 import { post } from "../../API/axios"
 import { useNavigate } from "react-router-dom"
+import { ILoginInput, ILoginResponse } from "../../interface/ILogin"
 
 const Login = () => {
 
@@ -25,15 +26,17 @@ const Login = () => {
     } = useForm();
 
     const onSubmit = async (data: any) => {
+        console.log(data)
         post("/login", data)
-            .then((res: any) => {
+            .then((res: ILoginResponse) => {
+                console.log(res)
                 setToken({
                     name: config.tokenName,
                     value: JSON.stringify(res.data.token),
                 });
                 setUser({
                     name: config.user,
-                    value: JSON.stringify(res.data.data)
+                    value: JSON.stringify(res.data.email)
                 })
                 toast.success("Login Successful");
                 navigate(routes.nurses.path)
@@ -54,7 +57,7 @@ const Login = () => {
         <>
             <Row>
                 <Col lg={5} md={4} sm={4} className={styles.imageBody}>
-                    <img src={LoginImage} height='100%' className={styles.image} />
+                    <img src={LoginImage} height='100%' className={styles.image} alt='login' />
                 </Col>
                 <Col lg={7} md={8} sm={8} className={styles.formBody}>
                     <p className={styles.welcomeText} >Welcome back!</p>
