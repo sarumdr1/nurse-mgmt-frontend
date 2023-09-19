@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--primary);
+}
+
+.profile {
+  background: transparent;
+  color: var(--primary);
+  border: none;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.profile:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.title {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 600;
+}

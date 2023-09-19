@@ -26,10 +26,8 @@ const Login = () => {
     } = useForm();
 
     const onSubmit = async (data: any) => {
-        console.log(data)
         post("/login", data)
             .then((res: ILoginResponse) => {
-                console.log(res)
                 setToken({
                     name: config.tokenName,
                     value: JSON.stringify(res.data.token),
