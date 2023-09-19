@@ -31,7 +31,6 @@ const responseInterceptor = instance.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.log(error.response)
     if (error.response?.data === constant.unAuthorizedMessage) {
       removeToken({ name: constant.tokenName });
       window.location.href = "/";

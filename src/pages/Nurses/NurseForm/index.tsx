@@ -23,7 +23,6 @@ const NurseForm = (props: IProps) => {
     });
 
     const onSubmit = (data: any) => {
-        console.log(data)
         props?.onSubmit(data)
     }
     return (

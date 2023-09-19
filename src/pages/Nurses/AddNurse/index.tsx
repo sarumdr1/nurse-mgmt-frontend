@@ -14,7 +14,6 @@ const AddNurse = () => {
     const navigate = useNavigate()
 
     const onSubmit = async (data: any) => {
-        console.log(data)
         post("/nurse", data)
             .then((res: any) => {
                 toast.success("Nurse added successful");

@@ -6,6 +6,7 @@ import config from "../../config/index";
 import routes from "../../config/routes";
 
 import styles from '../UnAuthenticatedRoute/styles.module.scss'
+import Header from "../../component/Header";
 
 const AuthenticatedRoute = () => {
 
@@ -21,6 +22,7 @@ const AuthenticatedRoute = () => {
             <Row style={{ width: '100%', margin: '0' }}>
                 {/* <Col lg={2} id="sidebar-wrapper">
                 </Col> */}
+                <Header />
                 <Col id="page-content-wrapper">
                     <main
                         className={styles.content}

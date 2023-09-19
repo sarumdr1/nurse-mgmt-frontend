@@ -26,9 +26,8 @@ const EditNurse = () => {
                 toast.error("Something went failed.Please try again")
             })
     }, [id])
-    console.log(nurse)
+
     const onSubmit = async (data: any) => {
-        console.log(data)
         put(`/nurse/${id}`, data)
             .then((res: any) => {
                 toast.success("Nurse updated successful");

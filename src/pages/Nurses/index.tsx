@@ -92,7 +92,7 @@ const Nurses = () => {
                 <p className={styles.title}> Nurses</p>
                 <CustomButton type='button' label='Add Nurse' variant='secondary' onClick={handleAddNurse} />
             </div>
-            <Table striped>
+            <Table>
                 <thead className={styles.thead}>
                     <tr>
                         <th>S.N</th>
@@ -105,6 +105,7 @@ const Nurses = () => {
                         <th>Duty End Time</th>
                         <th>Address</th>
                         <th>Gender</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody className={styles.tbody}>
