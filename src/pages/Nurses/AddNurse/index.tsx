@@ -6,6 +6,7 @@ import { post } from "../../../API/axios";
 import routes from "../../../config/routes";
 
 import NurseImg from '../../../images/nurse.svg'
+import BackImage from '../../../images/back.png'
 import NurseForm from "../NurseForm";
 
 import styles from './styles.module.scss'
@@ -35,7 +36,8 @@ const AddNurse = () => {
                 <img src={NurseImg} alt='nurse' />
             </Col>
             <Col lg={8} className={styles.formCol}>
-                <p className={styles.title}>Add New Nurses</p>
+                <img src={BackImage} className={styles.back} onClick={() => navigate(routes.nurses.path)} />
+                &nbsp; <span className={styles.title}>Add New Nurses</span>
                 <NurseForm onSubmit={onSubmit} btnTitle='Add Nurse' />
             </Col>
 

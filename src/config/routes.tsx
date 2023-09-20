@@ -22,6 +22,10 @@ const routes = {
         path: paths.EDIT_NURSES,
         component: lazy(() => import("../pages/Nurses/EditNurse")),
     },
+    nurseDetail: {
+        path: paths.NURSE_DETAIL,
+        component: lazy(() => import("../pages/Nurses/NurseDetail")),
+    },
 }
 
 export default routes
