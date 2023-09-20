@@ -10,6 +10,7 @@ export interface INurse {
     working_shift: string,
     duty_start_time: string,
     duty_end_time: string,
+    role: string,
     address: string,
     gender: string
 }
