@@ -25,7 +25,7 @@ const NurseForm = (props: IProps) => {
     const onSubmit = (data: any) => {
         props?.onSubmit(data)
     }
-    console.log(errors)
+
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -147,6 +147,24 @@ const NurseForm = (props: IProps) => {
                 </select>
                 {errors.gender &&
                     <p className='error-message'>{errors?.gender?.message as string}</p>
+                }
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Role</Form.Label>
+                <br />
+                <select
+                    id="selectmethod"
+                    defaultValue=""
+                    {...register("role")}
+                    className={`${styles.formInput} ${styles.gender}`}
+                >
+                    <option value="" disabled>Select Option</option>
+                    <option value="rounding_manager">Rounding Manager</option>
+                    <option value="employee">Employee</option>
+                </select>
+                {errors.role &&
+                    <p className='error-message'>{errors?.role?.message as string}</p>
                 }
             </Form.Group>
 

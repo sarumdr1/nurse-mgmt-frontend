@@ -1,19 +1,18 @@
 import React from "react"
-import { Form, Button, Col, Row } from "react-bootstrap"
+import { Form, Col, Row } from "react-bootstrap"
 import FormInput from "../../component/FormInput"
+import { useForm } from "react-hook-form"
+import { toast } from "react-toastify"
+import { useNavigate } from "react-router-dom"
 
 import LoginImage from '../../images/login.svg'
 
-import styles from './styles.module.scss'
 import CustomButton from '../../component/CustomButton/index';
-import { useForm } from "react-hook-form"
-import { toast } from "react-toastify"
-import config from "../../config"
 import routes from "../../config/routes"
-import { setUser } from "../../utils/user"
-import { setToken } from "../../utils/token"
 import { post } from "../../API/axios"
-import { useNavigate } from "react-router-dom"
+
+import styles from './styles.module.scss'
+
 
 const Signup = () => {
 
@@ -46,10 +45,9 @@ const Signup = () => {
         <>
             <Row>
                 <Col lg={5} md={4} sm={4} className={styles.imageBody}>
-                    <img src={LoginImage} height='100%' className={styles.image} />
+                    <img src={LoginImage} height='100%' className={styles.image} alt='signup' />
                 </Col>
                 <Col lg={7} md={8} sm={8} className={styles.formBody}>
-                    {/* <p className={styles.welcomeText} ></p> */}
                     <p className={styles.mainTitle}>Create your account</p>
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">

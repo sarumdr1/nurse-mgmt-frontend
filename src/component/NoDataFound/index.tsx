@@ -4,7 +4,7 @@ import NoImageFound from '../../images/noImageFound.png'
 const NoDataFound = () => {
     return (
         <div>
-            <img src={NoImageFound} />
+            <img src={NoImageFound} alt='noDataFound' />
             <p>No Data Found</p>
         </div>
     )

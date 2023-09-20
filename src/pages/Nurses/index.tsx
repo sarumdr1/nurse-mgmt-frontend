@@ -15,6 +15,7 @@ import EditImg from '../../images/edit.svg'
 import DeleteImg from '../../images/delete.svg'
 import styles from './styles.module.scss'
 import routes from "../../config/routes";
+import { FormatRole } from "../../utils";
 
 
 const Nurses = () => {
@@ -62,6 +63,7 @@ const Nurses = () => {
             <td className={styles.td}>{nurse.working_shift ?? '-'}</td>
             <td className={styles.td}>{nurse.duty_start_time}</td>
             <td className={styles.td}>{nurse.duty_end_time}</td>
+            <td className={`${styles.td} ${styles.role}`}>{nurse.role ? FormatRole(nurse.role) : '-'}</td>
             <td className={styles.td}>{nurse.address}</td>
             <td className={styles.td}>{nurse.gender}</td>
             <td className={styles.td} >
@@ -103,6 +105,7 @@ const Nurses = () => {
                         <th>Working Shift</th>
                         <th>Duty Start Time</th>
                         <th>Duty End Time</th>
+                        <th>Role</th>
                         <th>Address</th>
                         <th>Gender</th>
                         <th>Action</th>
