@@ -5,7 +5,9 @@ import { toast } from "react-toastify";
 import { get, put } from "../../../API/axios";
 import routes from "../../../config/routes";
 
+import BackImage from '../../../images/back.png'
 import NurseImg from '../../../images/nurse.svg'
+
 import NurseForm from "../NurseForm";
 
 import styles from '../AddNurse/styles.module.scss'
@@ -51,7 +53,9 @@ const EditNurse = () => {
                 <img src={NurseImg} alt='nurse' />
             </Col>
             <Col lg={8} className={styles.formCol}>
-                <p className={styles.title}>Edit Nurses</p>
+                <img src={BackImage} className={styles.back} onClick={() => navigate(routes.nurses.path)} />
+                &nbsp;
+                <span className={styles.title}>Edit Nurses</span>
                 <NurseForm onSubmit={onSubmit} data={nurse} btnTitle='Edit Nurse' />
             </Col>
 

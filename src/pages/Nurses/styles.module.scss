@@ -31,3 +31,11 @@
 .role {
   text-transform: capitalize;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.tr:hover {
+  background: var(--primary);
+}

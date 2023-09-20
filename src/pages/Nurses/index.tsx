@@ -35,6 +35,10 @@ const Nurses = () => {
             })
     }, [refresh])
 
+    const handleNurseDetail = (id: number) => {
+        navigate(routes.nurseDetail.path(id.toString()))
+    }
+
     const handleEdit = (id: number) => {
         navigate(routes.editNurses.path(id.toString()))
     }
@@ -54,13 +58,12 @@ const Nurses = () => {
             });
     }
     const tableBody = nurses?.map((nurse: INurse, index: number) => (
-        <tr key={nurse.ID} className={styles.tr}>
+        <tr key={nurse.ID} className={styles.tr} >
             <td className={styles.td}> {index + 1}</td>
-            <td className={styles.td}>{nurse.full_name}</td>
-            <td className={styles.td}>{nurse.email}</td>
+            <td className={`${styles.td} ${styles.pointer}`} onClick={() => handleNurseDetail(nurse.ID)}>{nurse.full_name}</td>
+            <td className={`${styles.td} ${styles.pointer}`} onClick={() => handleNurseDetail(nurse.ID)}>{nurse.email}</td>
             <td className={styles.td}>{nurse.contact_number}</td>
             <td className={styles.td}>{nurse.working_days}</td>
-            <td className={styles.td}>{nurse.working_shift ?? '-'}</td>
             <td className={styles.td}>{nurse.duty_start_time}</td>
             <td className={styles.td}>{nurse.duty_end_time}</td>
             <td className={`${styles.td} ${styles.role}`}>{nurse.role ? FormatRole(nurse.role) : '-'}</td>
@@ -102,7 +105,6 @@ const Nurses = () => {
                         <th>Email</th>
                         <th>Contact Number</th>
                         <th>Working Days</th>
-                        <th>Working Shift</th>
                         <th>Duty Start Time</th>
                         <th>Duty End Time</th>
                         <th>Role</th>
